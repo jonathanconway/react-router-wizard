@@ -1,0 +1,48 @@
+{
+  "name": "react-router-wizard",
+  "version": "0.1.0",
+  "description": "A React container for assembling components into a wizard interface.",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "watch webpack ./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonathanconway/react-wizard"
+  },
+  "keywords": [
+    "react",
+    "tags",
+    "input",
+    "component",
+    "javascript",
+    "react-component"
+  ],
+  "author": "Jonathan Conway",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathanconway/react-wizard/issues"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "homepage": "https://github.com/jonathanconway/react-wizard",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.1.3",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.3.2",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "@types/react": "^15.0.24",
+    "@types/react-dom": "^15.5.0",
+    "@types/react-router": "^4.0.9",
+    "@types/react-router-dom": "^4.0.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.0.9",
+    "react-router-dom": "^4.0.9",
+    "webpack": "^2.5.1"
+  }
+}
