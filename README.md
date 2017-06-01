@@ -1,4 +1,4 @@
-# react-wizard
+# react-router-wizard
 
 A React container for assembling components into a wizard interface. Works with [`react-router`](https://github.com/ReactTraining/react-router).
 
