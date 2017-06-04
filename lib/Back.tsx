@@ -1,35 +1,10 @@
 import * as React from 'react';
-import { Component } from 'react';
-import { Route } from 'react-router';
-import { Link } from 'react-router-dom';
+import Nav from './Nav';
 
-interface P {
-  path?: string;
-}
-interface S {}
-
-export default class Back extends Component<P, S> {
-  generateBackUrl(routeProps: any) {
-    return routeProps
-      .match
-      .url
-      .split('/')
-      .reverse()
-      .slice(1)
-      .reverse()
-      .concat([(parseInt(routeProps.match.params.step, 10) - 1)])
-      .join('/');
+export default class Back extends Nav {
+  protected ComputeTargetIndex(currentIndex: number) : number {
+    return currentIndex - 1;
   }
 
-  render() {
-    return (
-      <Route path={this.props.path} render={(routeProps: any) =>
-        <Link
-          to={this.generateBackUrl(routeProps)}
-        >
-          { this.props.children || 'Back' }
-        </Link>
-      } />
-    );
-  }
+  protected DefaultText : string = 'Back';
 }

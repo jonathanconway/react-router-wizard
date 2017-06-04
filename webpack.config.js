@@ -1,8 +1,14 @@
+var path = require('path');
+
 module.exports = {
-  entry: "./lib/index.ts",
+  entry: {
+    dist: "./lib/index.ts",
+    example: "./example/index.tsx"
+  },
+
   output: {
-    filename: "bundle.js",
-    path: __dirname + "/dist",
+    filename: "[name]/bundle.js",
+    path: __dirname,
     libraryTarget: "umd"
   },
 
@@ -14,7 +20,14 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+      {
+        test: /\.tsx?$/,
+        loader: "ts-loader",
+        include: [
+          path.resolve(__dirname, "lib"),
+          path.resolve(__dirname, "example")
+        ]
+      },
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
   }

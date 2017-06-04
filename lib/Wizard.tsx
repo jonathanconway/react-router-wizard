@@ -4,7 +4,7 @@ import { Route, Redirect, RouteProps } from 'react-router';
 
 interface P {
   path?: string;
-  children: Array<JSX.Element>;
+  children?: Array<JSX.Element> | string;
 }
 interface S {}
 
@@ -17,7 +17,7 @@ interface V4RouteProps extends RouteProps {
 
 export default class Wizard extends Component<P, S> {
   public static defaultProps: P = {
-    path: '/:step?',
+    path: '/:step?', // must contain a `step` variable
     children: []
   }
 

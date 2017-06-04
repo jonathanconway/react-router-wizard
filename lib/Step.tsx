@@ -5,19 +5,21 @@ import Back from './Back';
 import Next from './Next';
 
 interface P {
-  children?: any;
-  isLast: boolean;
-  isFirst: boolean;
-  path?: string;
-  show: boolean;
+  path?:          string;                      // Passed-in by <Wizard>
+  children?:      Array<JSX.Element> | string;
+  isLast?:        boolean;                     // Passed-in by <Wizard>
+  isFirst?:       boolean;                     // Passed-in by <Wizard>
+  show?:          boolean;                     // Passed-in by <Wizard>
+  back?:          ReactElement<any>;
+  next?:          ReactElement<any>;
   onShowChanged?: Function;
-  back?: ReactElement<any>;
-  next?: ReactElement<any>;
 }
 interface S {}
 
 export default class Step extends Component<P, S> {
-  public static defaultProps: P = {
+  public static defaultProps: Partial<P> = {
+    path: '/:step?',
+    children: [],
     isFirst: false,
     isLast: false,
     show: true,
@@ -31,27 +33,40 @@ export default class Step extends Component<P, S> {
     }
   }
 
+  withPath = (component:any) => React.cloneElement(component, { path: this.props.path });
+
+  back = () => {
+    const { back, isFirst } = this.props;
+    if (!isFirst) {
+      return this.withPath(back);
+    }
+  }
+
+  next = () => {
+    const { next, isLast } = this.props;
+    if (!isLast) {
+      return this.withPath(next);
+    }
+  }
+
   render() {
-    const { children, isLast, isFirst, path, show } = this.props;
-    var { back, next } = this.props;
-    if (back) {
-      back = React.cloneElement(back, { path });
-    }
-    if (next) {
-      next = React.cloneElement(next, { path });
-    }
+    const { children, show } = this.props;
+
     return (
-      <div style={{display: (show ? 'inherit' : 'none')}}>
-        <div>
-          { (!isFirst && !!back) && back }
-        </div>
+      show
+        ? (
+          <div>
+            <div>
+              { this.back() }
+            </div>
 
-        { children }
+            { children }
 
-        <div>
-          { (!isLast && !!next) && next }
-        </div>
-      </div>
+            <div>
+              { this.next() }
+            </div>
+          </div>)
+        : null
     );
   }
 }

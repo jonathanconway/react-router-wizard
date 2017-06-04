@@ -5,7 +5,9 @@
   "main": "dist/bundle.js",
   "scripts": {
     "build": "webpack",
-    "watch": "watch webpack ./lib"
+    "watch": "watch webpack ./lib",
+    "test": "jest",
+    "deploy": "npm run build && gh-pages -d example"
   },
   "repository": {
     "type": "git",
@@ -29,8 +31,14 @@
   },
   "homepage": "https://github.com/jonathanconway/react-wizard",
   "devDependencies": {
-    "awesome-typescript-loader": "^3.1.3",
+    "@types/enzyme": "^2.8.0",
+    "enzyme": "^2.8.2",
+    "expect": "^1.20.2",
+    "gh-pages": "^1.0.0",
+    "react-test-renderer": "^15.5.4",
     "source-map-loader": "^0.2.1",
+    "ts-jest": "^20.0.4",
+    "ts-loader": "^2.1.0",
     "typescript": "^2.3.2",
     "watch": "^1.0.2"
   },
@@ -44,5 +52,16 @@
     "react-router": "^4.0.9",
     "react-router-dom": "^4.0.9",
     "webpack": "^2.5.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/tests/.*\\.(ts|tsx|js)$"
   }
 }
