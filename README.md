@@ -14,14 +14,14 @@ npm install react-wizard --save
 
 ```
 import React, { Component } from 'react';
-import Wizard, { Step } from 'react-router-wizard';
 import { HashRouter } from 'react-router-dom';
+import Wizard, { Step } from 'react-router-wizard';
 
 export default class App extends Component {
   render() {
     return (
       <HashRouter>
-        <Wizard path="/:step?">
+        <Wizard>
           <Step>
             <h1>Welcome to Step 1</h1>
           </Step>
