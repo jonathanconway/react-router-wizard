@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { render } from 'enzyme';
 import { MemoryRouter } from 'react-router';
-
 import Nav from '../Nav';
 
-export default class Fake extends Nav {
+class Fake extends Nav {
   protected ComputeTargetIndex(currentIndex: number) : number {
     return currentIndex;
   }
