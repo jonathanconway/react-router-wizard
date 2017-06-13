@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { render } from 'enzyme';
-import Back from '../lib/Back';
 import { MemoryRouter } from 'react-router';
+
+import Back from '../Back';
 
 describe('<Back />', () =>
   describe('we are currently on a step, as defined by the `step` param in the current route', () =>

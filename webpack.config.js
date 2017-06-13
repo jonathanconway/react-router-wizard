@@ -22,13 +22,8 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "ts-loader",
-        include: [
-          path.resolve(__dirname, "lib"),
-          path.resolve(__dirname, "example")
-        ]
-      },
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+        loader: "ts-loader"
+      }
     ]
   }
 };

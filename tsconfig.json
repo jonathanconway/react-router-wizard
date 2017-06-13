@@ -9,5 +9,8 @@
   },
   "include": [
     "./lib/**/*"
+  ],
+  "exclude": [
+    "./lib/__tests__"
   ]
 }
