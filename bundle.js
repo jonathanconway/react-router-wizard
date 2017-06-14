@@ -2838,7 +2838,7 @@ var _resolvePathname = __webpack_require__(112);
 
 var _resolvePathname2 = _interopRequireDefault(_resolvePathname);
 
-var _valueEqual = __webpack_require__(113);
+var _valueEqual = __webpack_require__(116);
 
 var _valueEqual2 = _interopRequireDefault(_valueEqual);
 
@@ -6861,8 +6861,8 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(3);
 var react_1 = __webpack_require__(3);
-var Back_1 = __webpack_require__(114);
-var Next_1 = __webpack_require__(115);
+var Back_1 = __webpack_require__(113);
+var Next_1 = __webpack_require__(114);
 var Step = (function (_super) {
     __extends(Step, _super);
     function Step() {
@@ -12844,6 +12844,85 @@ module.exports = resolvePathname;
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var Nav_1 = __webpack_require__(47);
+var Back = (function (_super) {
+    __extends(Back, _super);
+    function Back() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.DefaultText = 'Back';
+        return _this;
+    }
+    Back.prototype.ComputeTargetIndex = function (currentIndex) {
+        return currentIndex - 1;
+    };
+    return Back;
+}(Nav_1.default));
+exports.default = Back;
+
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var Nav_1 = __webpack_require__(47);
+var Next = (function (_super) {
+    __extends(Next, _super);
+    function Next() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.DefaultText = 'Next';
+        return _this;
+    }
+    Next.prototype.ComputeTargetIndex = function (currentIndex) {
+        return currentIndex + 1;
+    };
+    return Next;
+}(Nav_1.default));
+exports.default = Next;
+
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Wizard_1 = __webpack_require__(57);
+var Step_1 = __webpack_require__(56);
+exports.Step = Step_1.default;
+exports.default = Wizard_1.default;
+
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 exports.__esModule = true;
 
@@ -12883,85 +12962,6 @@ var valueEqual = function valueEqual(a, b) {
 };
 
 exports.default = valueEqual;
-
-/***/ }),
-/* 114 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var Nav_1 = __webpack_require__(47);
-var Back = (function (_super) {
-    __extends(Back, _super);
-    function Back() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.DefaultText = 'Back';
-        return _this;
-    }
-    Back.prototype.ComputeTargetIndex = function (currentIndex) {
-        return currentIndex - 1;
-    };
-    return Back;
-}(Nav_1.default));
-exports.default = Back;
-
-
-/***/ }),
-/* 115 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var Nav_1 = __webpack_require__(47);
-var Next = (function (_super) {
-    __extends(Next, _super);
-    function Next() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.DefaultText = 'Next';
-        return _this;
-    }
-    Next.prototype.ComputeTargetIndex = function (currentIndex) {
-        return currentIndex + 1;
-    };
-    return Next;
-}(Nav_1.default));
-exports.default = Next;
-
-
-/***/ }),
-/* 116 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Wizard_1 = __webpack_require__(57);
-var Step_1 = __webpack_require__(56);
-exports.Step = Step_1.default;
-exports.default = Wizard_1.default;
-
 
 /***/ }),
 /* 117 */
@@ -15421,7 +15421,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(3);
 var react_1 = __webpack_require__(3);
 var react_router_dom_1 = __webpack_require__(55);
-var lib_1 = __webpack_require__(116);
+var lib_1 = __webpack_require__(115);
 var App = (function (_super) {
     __extends(App, _super);
     function App() {
