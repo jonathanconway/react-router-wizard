@@ -4,9 +4,9 @@ A React container for assembling components into a wizard interface. Works with 
 
 <div>
   <img style="display:inline-block;vertical-align:middle" src="https://facebook.github.io/react/img/logo.svg" alt="ReactJS logo" height="50px" />
-  <span style="font-size:3rem;vertical-align:middle;display:inline-block;padding:0 1rem;">+</span>
+  <span style="font-size:50px;vertical-align:middle;display:inline-block;padding:0 1rem;">+</span>
   <img style="display:inline-block;vertical-align:middle" src="https://seeklogo.com/images/R/react-router-logo-AB5BFB638F-seeklogo.com.png" alt="React-Router logo" height="50px" />
-  <span style="font-size:3rem;vertical-align:middle;display:inline-block;padding:0 1rem;">+</span>
+  <span style="font-size:50px;vertical-align:middle;display:inline-block;padding:0 1rem;">+</span>
   <img style="display:inline-block;vertical-align:middle" src="http://i.imgur.com/rbEzHFM.png" alt="Wizard sketch" height="50px" />
 </div>
 
